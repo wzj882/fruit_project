@@ -12,7 +12,7 @@ st.write("请上传一张水果图片，让 AI 告诉你它新不新鲜！")
 device = torch.device('cpu')
 model = models.resnet18(weights=None)
 model.fc = torch.nn.Linear(512, 2)
-model.load_state_dict(torch.load(r'C:\Users\Administrator\Desktop\fruit_project\fruit_model.pth', map_location=device))
+model.load_state_dict(torch.load("fruit_model.pth", map_location=device))
 model.to(device)
 model.eval()
 
